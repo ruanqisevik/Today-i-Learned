@@ -1,5 +1,4 @@
-#pieces-notes-@property
-==
+#pieces_notes @property
 ###@property是什么
 `@property` 是声明属性的语法，它可以快速方便的为实例变量创建存取器，并允许我们通过点语法使用存取器。
 >存取器（accessor）：指用于获取和设置实例变量的方法。用于获取实例变量值的存取器是getter，用于设置实例变量值的存取器是setter。
