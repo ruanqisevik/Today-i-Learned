@@ -9,4 +9,5 @@
 ## Index 索引
 ### [iOS](./iOS)
 - [memory_management](./iOS/memory_management) 
-- [memory_management](./iOS/memory_management)
+- [note_pieces](./iOS/note_pieces)
+- [NSNotification.md](./iOS/NSNotification.md)
