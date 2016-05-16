@@ -1,0 +1,12 @@
+#iOS_ViewController_lifeCycle(iOS_ViewController生命周期)
+- initWithCoder:(NSCoder *)aDecoder：(使用storyboard加载)
+- loadView：
+- viewDidLoad：
+- viewWillAppear：
+- viewWillLayoutSubviews：(加载当前视图,可能被多次调用)
+- viewDidLayoutSubviews：(加载当前视图完毕,可能被多次调用)
+- viewDidAppear:
+- viewWillDisappear：
+- viewWillLayoutSubviews：(加载当前视图,可能被多次调用)
+- viewDidLayoutSubviews：(加载当前视图完毕,可能被多次调用)
+- viewDidDisappear：
