@@ -10,6 +10,7 @@
     - [iOS](#iOS)
     - [iOS_note_pieces](#iOS_note_pieces)
     - [other](#other)
+    - [vim](#vim-learning)
 - [反馈问题或建议](#反馈问题或建议)
 
 
@@ -34,6 +35,10 @@
 - [about_ask_a_question](./other/about_ask_a_question.md)
 - [general_knowledge](./other/general_knowledge.md)
 - [project_code_lines_statistics](./other/project_code_lines_statistics.md)
+
+<a name="vim-learning"></a>
+###vim-learning
+- [vim adventures](https://vim-adventures.com/)  
 
 ## 反馈问题或建议
 
