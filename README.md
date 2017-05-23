@@ -6,37 +6,29 @@
 
 <!-- MarkdownTOC -->
 
-- [分类](#分类)
-    - [iOS](#iOS)
-    - [iOS_note_pieces](#iOS_note_pieces)
-    - [other](#other)
-    - [vim](#vim-learning)
-- [反馈问题或建议](#反馈问题或建议)
-
+- 分类
+    - iOS
+    - iOS_notebook
+    - other
+    - vim-learning
+- 反馈问题或建议
 
 <!-- /MarkdownTOC -->
 
-<a name="分类"></a>
 ## 分类
 
-<a name="iOS"></a>
 ###iOS
 - [ARC与MRC](./iOS/ARC_MRC.md)
 - [NSNotification](./iOS/NSNotification.md)
 
-<a name="iOS_note_pieces"></a>
-###iOS_note_pieces
-- [@property](./iOS_note_pieces/@property.md)
-- [unrecognized_selector](./iOS_note_pieces/unrecognized_selector.md)
-- [viewController_lifeCycle](./iOS_note_pieces/viewController_lifeCycle.md)
+###iOS_notebook
+- [iOS_notebook](https://www.gitbook.com/book/ruanqisevik/roy_notebook/details)
 
-<a name="other"></a>
 ###other
 - [about_ask_a_question](./other/about_ask_a_question.md)
 - [general_knowledge](./other/general_knowledge.md)
 - [project_code_lines_statistics](./other/project_code_lines_statistics.md)
 
-<a name="vim-learning"></a>
 ###vim-learning
 - [vim adventures](https://vim-adventures.com/)  
 

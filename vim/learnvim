@@ -1,0 +1,109 @@
+//
+//  MerchantRegistGradeViewController.m
+//  YFOASystem
+//
+//  Created by apple on 10/05/2017.
+//  Copyright © 2017 wangshang. All rights reserved.
+//
+
+#import "MerchantRegistGradeViewController.h"
+#import "MerchantRegistGradeCell.h"
+#import "TitleTextViewCell.h"
+#import <Masonry.h>
+#import <ReactiveCocoa.h>
+#import "GradeCommitModel.h"
+@interface MerchantRegistGradeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,strong)GradeCommitModel *model;
+@end
+
+@implementation MerchantRegistGradeViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.title = @"入驻审核";
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+   self.tableView.tableFooterView = [self footView];
+    self.model = [[GradeCommitModel alloc] init];
+    // Do any additional setup after loading the view.
+}
+- (UIView *)footView{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 100)];
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:@"提交评级" forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor mainColor]];
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(commitAction) forControlEvents:UIControlEventTouchUpInside];
+    button.layer.cornerRadius = 45/2;
+    [view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(view);
+        make.width.equalTo(@(kDeviceWidth-100));
+        make.height.equalTo(@45);
+    }];
+    return view;
+}
+- (void)commitAction{
+    // model
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0) return 90;
+    else return 150;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 20;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section ==0){
+    static NSString *cellId = @"MerchantRegistGradeCell";
+    MerchantRegistGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if(!cell){
+        cell = [[MerchantRegistGradeCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+         @weakify(self)
+        cell.selectGrage = ^(NSInteger index) {
+            @strongify(self)
+            self.model.grade = index;
+        };
+    }
+    return cell;
+    }else{
+        static NSString *cellId = @"TitleTextViewCell";
+        TitleTextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if(!cell){
+            cell = [[TitleTextViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
+            cell.selectionStyle =   UITableViewCellSelectionStyleNone;
+            @weakify(self);
+            [cell.textView.rac_textSignal subscribeNext:^(id x) {
+                @strongify(self);
+                self.model.content = x;
+            }];
+        }
+        cell.titleLb.text = @"备注内容";
+        cell.textView.placeHolder = @"请填写备注";
+        return cell;
+    }
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
